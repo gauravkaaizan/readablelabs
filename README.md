@@ -2,7 +2,8 @@
 
 Single-page marketing website for **Readable Labs**, an AI Content Clarity Auditing service for e-commerce brands.
 
-**Live domain:** readablelabs.io
+**Live site:** https://readablelabs.netlify.app
+**Domain:** readablelabs.io
 **Location:** Seattle, WA
 **Calendly:** https://calendly.com/yugashree107/ai-content-clarity-discovery-call
 **LinkedIn:** https://www.linkedin.com/in/yugashree-kotkar/
@@ -13,10 +14,13 @@ Single-page marketing website for **Readable Labs**, an AI Content Clarity Audit
 
 ```
 readablelabs/
-├── index.html    # Single file — all HTML, CSS, and JS inline
-├── README.md     # This file
-└── CLAUDE.md     # AI assistant rules for this project
+├── index.html       # Single file — all HTML, CSS, and JS inline
+├── yugashree.jpg    # Founder headshot (About section)
+├── README.md        # This file
+└── CLAUDE.md        # AI assistant rules for this project
 ```
+
+---
 
 ## Running Locally
 
@@ -26,7 +30,7 @@ No build step required. Open directly in a browser:
 open index.html
 ```
 
-Or serve with any static file server:
+Or serve with any static file server for proper `http://` context:
 
 ```bash
 # Python
@@ -40,6 +44,64 @@ Then visit `http://localhost:8080`.
 
 ---
 
+## Deploying to Netlify
+
+### Option 1 — Drag and Drop (simplest)
+
+1. Go to [app.netlify.com](https://app.netlify.com)
+2. Click **Add new site → Deploy manually**
+3. Drag the entire `readablelabs/` folder onto the upload area
+4. Netlify gives you a live URL instantly
+
+### Option 2 — Netlify CLI
+
+```bash
+# Install CLI (if not already installed)
+npm install -g netlify-cli
+
+# Log in
+netlify login
+
+# Deploy to production from inside this folder
+netlify deploy --prod --dir .
+```
+
+### Option 3 — Netlify API (no interactive CLI needed)
+
+```bash
+# 1. Create the site (once)
+curl -X POST "https://api.netlify.com/api/v1/sites" \
+  -H "Authorization: Bearer YOUR_NETLIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "readablelabs"}'
+
+# 2. Zip the files
+zip -r deploy.zip index.html yugashree.jpg
+
+# 3. Deploy
+curl -X POST "https://api.netlify.com/api/v1/sites/YOUR_SITE_ID/deploys" \
+  -H "Authorization: Bearer YOUR_NETLIFY_TOKEN" \
+  -H "Content-Type: application/zip" \
+  --data-binary @deploy.zip
+```
+
+Get your token at: https://app.netlify.com/user/applications#personal-access-tokens
+
+### Option 4 — Connect GitHub repo
+
+1. Go to [app.netlify.com](https://app.netlify.com) → **Add new site → Import from Git**
+2. Connect the GitHub repo: `https://github.com/gauravkaaizan/readablelabs`
+3. Set **Publish directory** to `.` (the root, since there's no build step)
+4. Click **Deploy** — every push to `main` will auto-deploy
+
+### Pointing a custom domain
+
+1. In Netlify: **Site settings → Domain management → Add custom domain**
+2. Enter `readablelabs.io` and follow the DNS instructions
+3. Netlify provisions SSL automatically
+
+---
+
 ## Sections
 
 | # | Section | Notes |
@@ -49,7 +111,7 @@ Then visit `http://localhost:8080`.
 | 3 | Problem | Two-column: copy left, issue card panel right |
 | 4 | Solution | 6-card grid (3-col) + meta row |
 | 5 | How It Works | 2x2 step cards + italic callout note |
-| 6 | About | Two-column sidebar layout, sticky sidebar |
+| 6 | About | Two-column sidebar layout, real headshot |
 | 7 | Who It's For | Fit / not-fit card comparison |
 | 8 | Final CTA | Navy bg, large green button |
 | 9 | Footer | Dark navy, email + LinkedIn + CTA, copyright |
@@ -78,14 +140,14 @@ Then visit `http://localhost:8080`.
 - Scroll animations via `IntersectionObserver` (no library)
 - Sticky nav with `backdrop-filter: blur()`
 - Staggered card animations using JS-applied `transition-delay`
-- Non-breaking hyphen (`&#8209;`) used in "E-commerce" headings to prevent mid-word line breaks
+- Non-breaking hyphen (`&#8209;`) used in "E&#8209;commerce" headings to prevent mid-word line breaks
 - All CTAs link to Calendly
 
 ---
 
 ## Content Rules
 
-See `CLAUDE.md` for full guidelines. Key rule: **no em dashes anywhere in visible copy.**
+See `CLAUDE.md` for full guidelines. Key rules: no em dashes in copy, all text must be humanized.
 
 ---
 
