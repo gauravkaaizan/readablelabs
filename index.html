@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readable Labs: AI Content Clarity Audits for E-commerce</title>
+  <meta name="description" content="AI is already describing your products. Is it getting them right? Readable Labs helps e-commerce brands find where AI misunderstands their products and gives you specific fixes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1E2D3D;
+      --blue: #2D7DD2;
+      --blue-dark: #1F5FA0;
+      --green: #27AE60;
+      --green-dark: #1E8449;
+      --off-white: #F7F6F2;
+      --warm-gray: #EAE8E2;
+      --text: #222B35;
+      --text-mid: #4A5568;
+      --text-light: #718096;
+      --white: #FFFFFF;
+      --border: rgba(30,45,61,0.1);
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── UTILITY ─── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-pad {
+      padding: 96px 0;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+    h3 { font-size: 1.25rem; }
+
+    p { font-size: 1.0625rem; color: var(--text-mid); }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(39,174,96,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(39,174,96,0.35);
+    }
+
+    .btn-lg {
+      padding: 18px 44px;
+      font-size: 1.0625rem;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span {
+      color: var(--blue);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 100px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -200px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(45,125,210,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+
+    .hero-eyebrow-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
+    }
+
+    #hero h1 {
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    #hero h1 em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      font-size: 0.8125rem;
+      color: var(--text-light);
+      margin-top: 20px;
+    }
+
+    /* ─── PROBLEM ─── */
+    #problem {
+      background: var(--off-white);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .problem-left h2 {
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .problem-left p {
+      margin-bottom: 16px;
+    }
+
+    .problem-tag {
+      margin-top: 32px;
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .problem-issues {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 20px rgba(30,45,61,0.06);
+    }
+
+    .problem-issues-label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .issue-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .issue-item:last-child { border-bottom: none; }
+
+    .issue-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: rgba(229,62,62,0.08);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .issue-text strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .issue-text span {
+      font-size: 0.8125rem;
+      color: var(--text-light);
+    }
+
+    /* ─── SOLUTION ─── */
+    #solution {
+      background: var(--white);
+    }
+
+    .solution-header {
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+
+    .solution-header h2 { color: var(--navy); margin-bottom: 16px; }
+
+    .solution-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .sol-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .sol-card:hover {
+      box-shadow: 0 8px 30px rgba(30,45,61,0.09);
+      border-color: rgba(45,125,210,0.25);
+    }
+
+    .sol-card-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(45,125,210,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .sol-card h3 {
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .sol-card p {
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    .solution-meta {
+      display: flex;
+      gap: 0;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .meta-item {
+      flex: 1;
+      padding: 24px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .meta-item:last-child { border-right: none; }
+
+    .meta-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .meta-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #how {
+      background: var(--off-white);
+    }
+
+    .how-header {
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .how-header h2 { color: var(--navy); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--border);
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: rgba(45,125,210,0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+    }
+
+    .how-note {
+      padding: 20px 24px;
+      border-left: 3px solid var(--blue);
+      background: rgba(45,125,210,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .how-note p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-sidebar {
+      position: sticky;
+      top: 88px;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #d0e8f9 0%, #c3e6d3 100%);
+      overflow: hidden;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+    }
+
+    .about-photo svg {
+      width: 80px;
+      height: 80px;
+      opacity: 0.45;
+    }
+
+    .about-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .about-title {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .about-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .about-linkedin:hover { text-decoration: underline; }
+
+    .about-linkedin svg {
+      width: 16px; height: 16px;
+    }
+
+    .about-body h2 {
+      color: var(--navy);
+      margin-bottom: 28px;
+    }
+
+    .about-body p {
+      margin-bottom: 16px;
+      font-size: 1.0625rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-body p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .about-highlight {
+      background: var(--off-white);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 24px 0;
+      border-left: 3px solid var(--green);
+    }
+
+    .about-highlight p {
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ─── FIT ─── */
+    #fit {
+      background: var(--off-white);
+    }
+
+    .fit-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .fit-header h2 { color: var(--navy); }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .fit-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px;
+      border: 1px solid var(--border);
+    }
+
+    .fit-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .fit-badge {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .fit-badge.good { background: rgba(39,174,96,0.10); color: var(--green); }
+    .fit-badge.bad  { background: rgba(229,62,62,0.10); color: #E53E3E; }
+
+    .fit-card-title {
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .fit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9375rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .fit-list li .check {
+      font-size: 14px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .fit-list.yes li .check { color: var(--green); }
+    .fit-list.no  li .check { color: #E53E3E; }
+
+    /* ─── FINAL CTA ─── */
+    #cta-final {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(45,125,210,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    #cta-final h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    #cta-final .cta-body {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.0625rem;
+      margin-bottom: 36px;
+    }
+
+    .cta-note {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #16212d;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 48px 0 36px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: #7bbff5; }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover { color: var(--white); }
+
+    .footer-link svg {
+      width: 15px; height: 15px;
+      opacity: 0.7;
+    }
+
+    .footer-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--green);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .footer-cta-btn:hover { background: var(--green-dark); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-sidebar {
+        position: static;
+        max-width: 280px;
+      }
+      .footer-top {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-pad { padding: 64px 0; }
+
+      .problem-grid,
+      .solution-cards,
+      .steps,
+      .fit-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .solution-meta {
+        flex-direction: column;
+      }
+
+      .meta-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+      }
+
+      .meta-item:last-child { border-bottom: none; }
+
+      #hero { padding-top: 120px; }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .about-sidebar { max-width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Readable<span>Labs</span></a>
+      <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Schedule a Review</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content fade-up">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          <span class="hero-eyebrow-text">AI Content Clarity Audits &middot; E-commerce</span>
+        </div>
+        <h1>AI Is Already Describing<br>Your Products.<br><em>Is It Getting Them Right?</em></h1>
+        <p class="hero-sub">
+          Most e-commerce brands are being misrepresented by ChatGPT, Claude, and Gemini. And they don't even know it. I help brands find where AI gets their products wrong, and give them specific fixes they can act on.
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Schedule a Review</a>
+        </div>
+        <p class="hero-note">20-minute call &middot; No pitch &middot; Just clarity</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="section-pad">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-left fade-up">
+          <span class="label">The Problem</span>
+          <h2>Your Content Is Clear to Humans. But AI Reads It Differently.</h2>
+          <p>When customers research products through ChatGPT, Claude, or Gemini, AI interprets your product descriptions, specifications, and marketing copy.</p>
+          <p>If your content is vague, contradictory, or assumes context, AI fills in the gaps with assumptions. <strong>Often wrong ones.</strong></p>
+          <div class="problem-tag">This isn't about visibility. It's about clarity.</div>
+        </div>
+
+        <div class="problem-issues fade-up">
+          <span class="problem-issues-label">What goes wrong</span>
+
+          <div class="issue-item">
+            <div class="issue-icon">📉</div>
+            <div class="issue-text">
+              <strong>Generic positioning</strong>
+              <span>You sound identical to cheaper competitors</span>
+            </div>
+          </div>
+
+          <div class="issue-item">
+            <div class="issue-icon">⚠️</div>
+            <div class="issue-text">
+              <strong>Hallucinated features</strong>
+              <span>Claims you never made, attributed to your product</span>
+            </div>
+          </div>
+
+          <div class="issue-item">
+            <div class="issue-icon">🔀</div>
+            <div class="issue-text">
+              <strong>Contradictory specifications</strong>
+              <span>Description vs. specs don't align for AI</span>
+            </div>
+          </div>
+
+          <div class="issue-item">
+            <div class="issue-icon">💸</div>
+            <div class="issue-text">
+              <strong>Lost differentiation</strong>
+              <span>Your premium value doesn't translate to AI output</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" class="section-pad">
+    <div class="container">
+      <div class="solution-header fade-up">
+        <span class="label">The Service</span>
+        <h2>AI Content Clarity Audits for E&#8209;commerce Brands</h2>
+        <p>I run your products through multiple AI systems, find exactly where and how AI gets them wrong, and give you specific fixes to sort it out.</p>
+      </div>
+
+      <div class="solution-cards">
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">🔍</div>
+          <h3>Comprehensive Analysis</h3>
+          <p>10&ndash;15 key products analyzed across multiple AI systems with systematic evaluation.</p>
+        </div>
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">↔️</div>
+          <h3>Side-by-Side Comparison</h3>
+          <p>AI interpretations compared directly against your intended messaging and specs.</p>
+        </div>
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">✅</div>
+          <h3>Specific Fixes</h3>
+          <p>Clear recommendations with before/after examples you can implement immediately.</p>
+        </div>
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">📋</div>
+          <h3>Root Cause Identification</h3>
+          <p>Not just what's wrong. I dig into why AI misreads your content and pinpoint exactly where it breaks down.</p>
+        </div>
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">📞</div>
+          <h3>Walkthrough Call</h3>
+          <p>30-minute call to walk through findings, answer questions, and discuss priorities.</p>
+        </div>
+        <div class="sol-card fade-up">
+          <div class="sol-card-icon">📄</div>
+          <h3>Implementation Guide</h3>
+          <p>Detailed report + prioritized action plan so nothing gets lost in a spreadsheet.</p>
+        </div>
+      </div>
+
+      <div class="solution-meta fade-up">
+        <div class="meta-item">
+          <span class="meta-label">Timeline</span>
+          <span class="meta-value">5&ndash;7 business days</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Delivery</span>
+          <span class="meta-value">Detailed report + implementation guide</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Systems tested</span>
+          <span class="meta-value">ChatGPT, Claude, Gemini</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section-pad">
+    <div class="container">
+      <div class="how-header fade-up">
+        <span class="label">Process</span>
+        <h2>How the Audit Works</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-num">01</div>
+          <h3>Product Selection</h3>
+          <p>You share your website URL. I select 10&ndash;15 representative products across your catalog.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">02</div>
+          <h3>Multi-System Testing</h3>
+          <p>I test each product through ChatGPT, Claude, and Gemini using a systematic evaluation framework.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">03</div>
+          <h3>Gap Analysis</h3>
+          <p>I map out where AI misunderstands, contradicts, or over-generalizes your products, and document what's causing each issue.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">04</div>
+          <h3>Recommendations</h3>
+          <p>You receive a comprehensive report with specific fixes, before/after examples, and implementation priorities.</p>
+        </div>
+      </div>
+
+      <div class="how-note fade-up">
+        <p>This isn't "AI SEO" or visibility optimization. It's content clarity analysis: figuring out why AI can't accurately represent what you actually sell, so you can fix it at the source.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-sidebar fade-up">
+          <div class="about-photo">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="30" r="18" fill="currentColor" opacity="0.35"/>
+              <ellipse cx="40" cy="70" rx="28" ry="18" fill="currentColor" opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="about-name">Yugashree</div>
+          <div class="about-title">Founder, Readable Labs &middot; Seattle, WA</div>
+          <a href="https://www.linkedin.com/in/yugashree-kotkar/" target="_blank" rel="noopener" class="about-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="about-body fade-up">
+          <span class="label">About</span>
+          <h2>Enterprise Scale. DTC Speed.</h2>
+
+          <p>Your product descriptions make perfect sense to customers. But when someone asks ChatGPT "What's the best [your category]," AI might describe your $200 product identically to a $40 generic.</p>
+
+          <p>I've managed product content at both ends: <strong>Walmart</strong> (100M+ users, massive catalog complexity) and <strong>DTC brands</strong> (small teams, launch speed). Whether it's thousands of SKUs or your first 10 products, I've been there.</p>
+
+          <p>8 years optimizing for conversion across Shopify, Amazon, and retail channels. Coordinating launches. Making content work at every touchpoint.</p>
+
+          <div class="about-highlight">
+            <p>That work revealed something most brands miss: content that converts humans is often structurally unclear to AI. "Premium quality" needs context AI doesn't have. "Professional-grade" could mean anything. Contradictory specs confuse it.</p>
+          </div>
+
+          <p>So AI describes you generically or recommends competitors instead.</p>
+
+          <p><strong>Readable Labs</strong> helps e-commerce brands identify these gaps before they cost customers. I audit how ChatGPT, Claude, and Gemini interpret your products, show exactly where clarity breaks down, and give you specific fixes you can implement this week.</p>
+
+          <p>Based in Seattle, working with brands from launch to $50M+ who want their content to work for both humans and AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="fit" class="section-pad">
+    <div class="container">
+      <div class="fit-header fade-up">
+        <span class="label">Who It's For</span>
+        <h2>This Is For You If:</h2>
+      </div>
+
+      <div class="fit-grid">
+        <div class="fit-card fade-up">
+          <div class="fit-card-header">
+            <div class="fit-badge good">✓</div>
+            <div class="fit-card-title">Good Fit</div>
+          </div>
+          <ul class="fit-list yes">
+            <li><span class="check">✓</span><span>E-commerce brand with 10+ SKUs</span></li>
+            <li><span class="check">✓</span><span>Sell physical products (supplements, beauty, baby, home, etc.)</span></li>
+            <li><span class="check">✓</span><span>Concerned about how AI represents your brand</span></li>
+            <li><span class="check">✓</span><span>Customers seem confused about your differentiation</span></li>
+            <li><span class="check">✓</span><span>Want to understand the problem before investing in solutions</span></li>
+          </ul>
+        </div>
+
+        <div class="fit-card fade-up">
+          <div class="fit-card-header">
+            <div class="fit-badge bad">✕</div>
+            <div class="fit-card-title">Not the Right Fit</div>
+          </div>
+          <ul class="fit-list no">
+            <li><span class="check">✕</span><span>Service businesses (no products to audit)</span></li>
+            <li><span class="check">✕</span><span>Brands with fewer than 10 SKUs</span></li>
+            <li><span class="check">✕</span><span>Companies looking for "AI SEO" quick fixes</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta-final" class="section-pad">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <span class="label" style="color:rgba(255,255,255,0.45);">Let's Talk</span>
+        <h2>Want to Know How AI Describes Your Products?</h2>
+        <p class="cta-body">Schedule a 20-minute content review to see if this applies to your catalog.</p>
+        <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Schedule a Review</a>
+        <p class="cta-note">No pitch. Just a conversation about what's happening with your content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="footer-logo">Readable<span>Labs</span></a>
+          <div class="footer-tagline">AI Content Clarity Audits for E-commerce</div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:hello@readablelabs.io" class="footer-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            hello@readablelabs.io
+          </a>
+          <a href="https://www.linkedin.com/in/yugashree-kotkar/" target="_blank" rel="noopener" class="footer-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="footer-cta-btn">
+            Schedule a Review &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2025 Readable Labs. All Rights Reserved. Seattle, WA</span>
+        <span class="footer-copy">readablelabs.io</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Scroll-triggered fade-up
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+      // Stagger cards within grids
+      document.querySelectorAll('.solution-cards, .steps, .fit-grid').forEach((parent) => {
+        parent.querySelectorAll('.fade-up').forEach((child, i) => {
+          child.style.transitionDelay = (i * 80) + 'ms';
+        });
+      });
+
+      // Sticky nav shadow
+      const nav = document.getElementById('main-nav');
+      window.addEventListener('scroll', () => {
+        nav.style.boxShadow = window.scrollY > 20
+          ? '0 2px 20px rgba(30,45,61,0.10)'
+          : '';
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
