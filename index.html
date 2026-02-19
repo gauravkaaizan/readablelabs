@@ -464,21 +464,16 @@
 
     .about-photo {
       width: 100%;
-      aspect-ratio: 1;
       border-radius: 16px;
-      background: linear-gradient(135deg, #d0e8f9 0%, #c3e6d3 100%);
       overflow: hidden;
       margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
     }
 
-    .about-photo svg {
-      width: 80px;
-      height: 80px;
-      opacity: 0.45;
+    .about-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
 
     .about-name {
@@ -999,10 +994,7 @@
       <div class="about-grid">
         <div class="about-sidebar fade-up">
           <div class="about-photo">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="30" r="18" fill="currentColor" opacity="0.35"/>
-              <ellipse cx="40" cy="70" rx="28" ry="18" fill="currentColor" opacity="0.25"/>
-            </svg>
+            <img src="yugashree.jpg" alt="Yugashree Kotkar, Founder of Readable Labs" />
           </div>
           <div class="about-name">Yugashree</div>
           <div class="about-title">Founder, Readable Labs &middot; Seattle, WA</div>
