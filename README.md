@@ -94,11 +94,41 @@ Get your token at: https://app.netlify.com/user/applications#personal-access-tok
 3. Set **Publish directory** to `.` (the root, since there's no build step)
 4. Click **Deploy** — every push to `main` will auto-deploy
 
-### Pointing a custom domain
+---
 
-1. In Netlify: **Site settings → Domain management → Add custom domain**
-2. Enter `readablelabs.io` and follow the DNS instructions
-3. Netlify provisions SSL automatically
+## Custom Domain Setup (Namecheap + Netlify)
+
+### Step 1 — Add the domain in Netlify
+
+1. Go to [app.netlify.com](https://app.netlify.com) and open the **readablelabs** site
+2. Click **Site settings → Domain management → Add a domain**
+3. Type `readablelabs.io` and click **Verify → Add domain**
+
+### Step 2 — Add DNS records in Namecheap
+
+1. Log in to [namecheap.com](https://namecheap.com)
+2. Go to **Domain List → Manage** next to `readablelabs.io`
+3. Click the **Advanced DNS** tab
+4. Delete any existing default `A` or `CNAME` records
+5. Add these two records:
+
+| Type | Host | Value | TTL |
+|------|------|-------|-----|
+| `A` | `@` | `75.2.60.5` | Automatic |
+| `CNAME` | `www` | `readablelabs.netlify.app` | Automatic |
+
+> **Note:** Make sure Nameservers in Namecheap is set to **Namecheap BasicDNS** (not custom nameservers), otherwise the Advanced DNS tab won't control your records.
+
+### Step 3 — Wait for DNS propagation
+
+DNS changes take anywhere from a few minutes to 24 hours. Check progress at [dnschecker.org](https://dnschecker.org) — enter `readablelabs.io` and watch for the `A` record to show `75.2.60.5` worldwide.
+
+### Step 4 — SSL (fully automatic, no action needed)
+
+Once Netlify detects the DNS is pointing correctly, it provisions a free SSL certificate automatically via Let's Encrypt. You will get an email from Netlify when it's ready. The site will then be live and secured at:
+
+- `https://readablelabs.io`
+- `https://www.readablelabs.io`
 
 ---
 
