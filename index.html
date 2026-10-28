@@ -3,11 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Readable Labs: AI Content Clarity Audits for E-commerce</title>
-  <meta name="description" content="AI is already describing your products. Is it getting them right? Readable Labs helps e-commerce brands find where AI misunderstands their products and gives you specific fixes." />
+  <title>Readable Labs | Small Business Marketing &amp; Growth, Redmond WA</title>
+  <meta name="description" content="Readable Labs helps small businesses and makers get more customers through Google, Instagram, Facebook and WhatsApp. Start with a free growth check: 3 fixes in 24 hours. Based in Redmond, WA." />
+  <link rel="canonical" href="https://readablelabs.io/" />
+  <meta name="google-site-verification" content="KIjQmOg73gdX-DZNHWqf1GUZ7dqejl-fTCiOgK1IXQM" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Readable Labs" />
+  <meta property="og:url" content="https://readablelabs.io/" />
+  <meta property="og:title" content="Readable Labs | More customers for your small business" />
+  <meta property="og:description" content="Start with a free growth check: the 3 things costing you the most customers, in 24 hours. Based in Redmond, WA." />
+  <meta property="og:image" content="https://readablelabs.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Readable Labs",
+    "url": "https://readablelabs.io/",
+    "image": "https://readablelabs.io/og-image.png",
+    "description": "Marketing and growth help for small businesses and makers: Google Business Profile, website, Instagram, Facebook, WhatsApp and reviews.",
+    "email": "yugashree107@gmail.com",
+    "founder": { "@type": "Person", "name": "Yugashree Kotkar", "url": "https://www.linkedin.com/in/yugashree-kotkar/" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Redmond", "addressRegion": "WA", "addressCountry": "US" },
+    "areaServed": "United States",
+    "sameAs": ["https://www.linkedin.com/in/yugashree-kotkar/"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy: #1E2D3D;
@@ -21,1126 +47,382 @@
       --text-mid: #4A5568;
       --text-light: #718096;
       --white: #FFFFFF;
-      --border: rgba(30,45,61,0.1);
+      --border: rgba(30,45,61,0.12);
       --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'DM Sans', system-ui, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-
-    body {
-      font-family: var(--sans);
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─── UTILITY ─── */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section-pad {
-      padding: 96px 0;
-    }
-
-    .label {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 16px;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--serif);
-      line-height: 1.2;
-      font-weight: 400;
-    }
-
-    h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); }
-    h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
-    h3 { font-size: 1.25rem; }
-
-    p { font-size: 1.0625rem; color: var(--text-mid); }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: 6px;
-      font-family: var(--sans);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(39,174,96,0.25);
-    }
-    .btn-primary:hover {
-      background: var(--green-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(39,174,96,0.35);
-    }
-
-    .btn-lg {
-      padding: 18px 44px;
-      font-size: 1.0625rem;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow 0.3s;
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--navy);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-logo span {
-      color: var(--blue);
-    }
-
-    /* ─── HERO ─── */
-    #hero {
-      padding-top: 160px;
-      padding-bottom: 100px;
-      background: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -200px;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,125,210,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 720px;
-      position: relative;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .hero-eyebrow-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.85); }
-    }
-
-    .hero-eyebrow-text {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-light);
-      letter-spacing: 0.02em;
-    }
-
-    #hero h1 {
-      color: var(--navy);
-      margin-bottom: 24px;
-    }
-
-    #hero h1 em {
-      font-style: italic;
-      color: var(--blue);
-    }
-
-    .hero-sub {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: var(--text-mid);
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-note {
-      font-size: 0.8125rem;
-      color: var(--text-light);
-      margin-top: 20px;
-    }
-
-    /* ─── PROBLEM ─── */
-    #problem {
-      background: var(--off-white);
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .problem-left h2 {
-      color: var(--navy);
-      margin-bottom: 24px;
-    }
-
-    .problem-left p {
-      margin-bottom: 16px;
-    }
-
-    .problem-tag {
-      margin-top: 32px;
-      display: inline-block;
-      background: var(--navy);
-      color: var(--white);
-      padding: 10px 20px;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    .problem-issues {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      box-shadow: 0 2px 20px rgba(30,45,61,0.06);
-    }
-
-    .problem-issues-label {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .issue-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .issue-item:last-child { border-bottom: none; }
-
-    .issue-icon {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      background: rgba(229,62,62,0.08);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 14px;
-    }
-
-    .issue-text strong {
-      display: block;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .issue-text span {
-      font-size: 0.8125rem;
-      color: var(--text-light);
-    }
-
-    /* ─── SOLUTION ─── */
-    #solution {
-      background: var(--white);
-    }
-
-    .solution-header {
-      max-width: 640px;
-      margin-bottom: 56px;
-    }
-
-    .solution-header h2 { color: var(--navy); margin-bottom: 16px; }
-
-    .solution-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .sol-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      transition: box-shadow 0.2s, border-color 0.2s;
-    }
-
-    .sol-card:hover {
-      box-shadow: 0 8px 30px rgba(30,45,61,0.09);
-      border-color: rgba(45,125,210,0.25);
-    }
-
-    .sol-card-icon {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      background: rgba(45,125,210,0.08);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
-
-    .sol-card h3 {
-      font-family: var(--sans);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .sol-card p {
-      font-size: 0.875rem;
-      color: var(--text-light);
-    }
-
-    .solution-meta {
-      display: flex;
-      gap: 0;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .meta-item {
-      flex: 1;
-      padding: 24px;
-      border-right: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .meta-item:last-child { border-right: none; }
-
-    .meta-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .meta-value {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    /* ─── HOW IT WORKS ─── */
-    #how {
-      background: var(--off-white);
-    }
-
-    .how-header {
-      max-width: 560px;
-      margin-bottom: 56px;
-    }
-
-    .how-header h2 { color: var(--navy); }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-bottom: 40px;
-    }
-
-    .step {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 32px;
-      border: 1px solid var(--border);
-    }
-
-    .step-num {
-      font-family: var(--serif);
-      font-size: 3rem;
-      color: rgba(45,125,210,0.12);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .step h3 {
-      font-family: var(--sans);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      font-size: 0.9rem;
-    }
-
-    .how-note {
-      padding: 20px 24px;
-      border-left: 3px solid var(--blue);
-      background: rgba(45,125,210,0.04);
-      border-radius: 0 8px 8px 0;
-    }
-
-    .how-note p {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      font-style: italic;
-    }
-
-    /* ─── ABOUT ─── */
-    #about {
-      background: var(--white);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 72px;
-      align-items: start;
-    }
-
-    .about-sidebar {
-      position: sticky;
-      top: 88px;
-    }
-
-    .about-photo {
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-
-    .about-photo img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .about-name {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .about-title {
-      font-size: 0.875rem;
-      color: var(--text-light);
-      margin-bottom: 16px;
-    }
-
-    .about-linkedin {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .about-linkedin:hover { text-decoration: underline; }
-
-    .about-linkedin svg {
-      width: 16px; height: 16px;
-    }
-
-    .about-body h2 {
-      color: var(--navy);
-      margin-bottom: 28px;
-    }
-
-    .about-body p {
-      margin-bottom: 16px;
-      font-size: 1.0625rem;
-      color: var(--text-mid);
-      line-height: 1.8;
-    }
-
-    .about-body p:last-child { margin-bottom: 0; }
-
-    .about-body p strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .about-highlight {
-      background: var(--off-white);
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin: 24px 0;
-      border-left: 3px solid var(--green);
-    }
-
-    .about-highlight p {
-      font-size: 0.9375rem;
-      color: var(--text-mid);
-      margin: 0;
-      font-style: italic;
-    }
-
-    /* ─── FIT ─── */
-    #fit {
-      background: var(--off-white);
-    }
-
-    .fit-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .fit-header h2 { color: var(--navy); }
-
-    .fit-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-
-    .fit-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 36px;
-      border: 1px solid var(--border);
-    }
-
-    .fit-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .fit-badge {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .fit-badge.good { background: rgba(39,174,96,0.10); color: var(--green); }
-    .fit-badge.bad  { background: rgba(229,62,62,0.10); color: #E53E3E; }
-
-    .fit-card-title {
-      font-family: var(--sans);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .fit-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .fit-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.9375rem;
-      color: var(--text-mid);
-      line-height: 1.5;
-    }
-
-    .fit-list li .check {
-      font-size: 14px;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .fit-list.yes li .check { color: var(--green); }
-    .fit-list.no  li .check { color: #E53E3E; }
-
-    /* ─── FINAL CTA ─── */
-    #cta-final {
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #cta-final::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,125,210,0.2) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-inner {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    #cta-final h2 {
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-
-    #cta-final .cta-body {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.0625rem;
-      margin-bottom: 36px;
-    }
-
-    .cta-note {
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.45);
-      margin-top: 20px;
-      font-style: italic;
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #16212d;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 48px 0 36px;
-    }
-
-    .footer-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 40px;
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .footer-logo {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .footer-logo span { color: #7bbff5; }
-
-    .footer-tagline {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.6;
-      max-width: 220px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .footer-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-link:hover { color: var(--white); }
-
-    .footer-link svg {
-      width: 15px; height: 15px;
-      opacity: 0.7;
-    }
-
-    .footer-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--white);
-      background: var(--green);
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .footer-cta-btn:hover { background: var(--green-dark); }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-copy {
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    /* ─── ANIMATIONS ─── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .about-sidebar {
-        position: static;
-        max-width: 280px;
-      }
-      .footer-top {
-        flex-direction: column;
-        gap: 32px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-pad { padding: 64px 0; }
-
-      .problem-grid,
-      .solution-cards,
-      .steps,
-      .fit-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .solution-meta {
-        flex-direction: column;
-      }
-
-      .meta-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        text-align: left;
-      }
-
-      .meta-item:last-child { border-bottom: none; }
-
-      #hero { padding-top: 120px; }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
-      .about-sidebar { max-width: 100%; }
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 0 18px; }
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 80px 0; }
+    .label { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--navy); line-height: 1.15; }
+    h1 { font-size: clamp(36px, 6vw, 58px); }
+    h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 16px; }
+    h3 { font-size: 22px; margin-bottom: 8px; }
+    .lead { font-size: 19px; color: var(--text-mid); max-width: 640px; }
+    .center { text-align: center; }
+    .center .lead { margin: 0 auto; }
+    .btn { display: inline-block; background: var(--green); color: var(--white); text-decoration: none; font-weight: 600; padding: 15px 28px; border-radius: 8px; transition: background .2s; }
+    .btn:hover { background: var(--green-dark); }
+    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+    /* nav */
+    nav { position: sticky; top: 0; background: rgba(255,255,255,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); z-index: 10; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .logo { font-family: var(--serif); font-size: 22px; color: var(--navy); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 15px; }
+    .nav-links a { text-decoration: none; color: var(--text-mid); }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links .btn { padding: 10px 18px; font-size: 14px; color: var(--white); }
+    @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+
+    /* hero */
+    .hero { background: var(--off-white); padding: 88px 0 80px; text-align: center; }
+    .hero h1 { max-width: 820px; margin: 0 auto 20px; }
+    .hero .lead { margin: 0 auto 32px; }
+    .hero .check { margin-left: auto; margin-right: auto; }
+    .hero .check-title, .hero .check-sub, .hero .check-note { text-align: center; }
+    .hero .check-sub { max-width: 560px; margin-left: auto; margin-right: auto; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 22px; }
+    .check { scroll-margin-top: 90px; background: var(--white); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 14px 34px rgba(30,45,61,.10); padding: 28px; max-width: 780px; margin: 6px 0 18px; }
+    .check-title { display: block; font-family: var(--serif); font-size: 26px; color: var(--navy); line-height: 1.2; margin-bottom: 6px; }
+    .check-sub { color: var(--text-mid); font-size: 16px; margin-bottom: 18px; }
+    .check-row { display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 10px; }
+    @media (max-width: 760px) { .check-row { grid-template-columns: 1fr; } }
+    .check input[type=text], .check input[type=email] { font: inherit; font-size: 16px; padding: 14px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--off-white); color: var(--text); min-width: 0; }
+    .check input:focus { outline: none; border-color: var(--blue); background: var(--white); }
+    .check button { border: none; cursor: pointer; font: inherit; font-weight: 600; white-space: nowrap; }
+    .check-note { font-size: 14px; color: var(--text-light); margin-top: 12px; }
+    .hidden { display: none; }
+    .alt-cta { font-size: 15px; color: var(--text-mid); margin: 4px 0 6px; }
+    .alt-cta a { color: var(--blue); font-weight: 600; }
+    .found { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 860px) { .found { grid-template-columns: 1fr; } }
+    .found div { border-left: 3px solid var(--blue); padding: 4px 0 4px 18px; }
+    .found b { display: block; color: var(--white); font-size: 17px; margin-bottom: 4px; }
+    .found p { font-size: 15px; }
+    .promise { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--text-mid); max-width: 600px; }
+    .promise b { color: var(--navy); }
+    .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--green); margin-top: 7px; }
+
+    /* who */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    .card p { color: var(--text-mid); font-size: 16px; }
+    .card .eg { font-size: 14px; color: var(--text-light); margin-top: 10px; }
+
+    /* problem */
+    .problem { background: var(--navy); color: #DDE4EC; }
+    .problem h2 { color: var(--white); }
+    .problem .lead { color: #B8C4D1; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    @media (max-width: 860px) { .stats { grid-template-columns: 1fr; } }
+    .stat { border-top: 2px solid var(--blue); padding-top: 18px; }
+    .stat .num { font-family: var(--serif); font-size: 46px; color: var(--white); line-height: 1; margin-bottom: 8px; }
+    .stat p { font-size: 16px; }
+    .source { font-size: 13px; color: #8597AA; margin-top: 28px; }
+
+    /* stages */
+    .stages { background: var(--off-white); }
+    .stage { display: flex; flex-direction: column; }
+    .stage .step { font-size: 13px; font-weight: 600; color: var(--blue); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
+    .stage ul { list-style: none; margin: 16px 0 20px; flex: 1; }
+    .stage li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 15px; color: var(--text-mid); }
+    .stage li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 600; }
+    .measure { font-size: 14px; color: var(--text-mid); background: var(--off-white); border-radius: 8px; padding: 10px 12px; margin-bottom: 18px; }
+    .measure b { color: var(--navy); }
+    .price { font-family: var(--serif); font-size: 30px; color: var(--navy); }
+    .price small { font-family: var(--sans); font-size: 14px; color: var(--text-light); }
+    .stage.featured { border: 2px solid var(--blue); }
+
+    /* handle */
+    .channels { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .chip { border: 1px solid var(--border); border-radius: 999px; padding: 9px 16px; font-size: 15px; background: var(--white); }
+    .callout { margin-top: 36px; border-left: 3px solid var(--green); padding: 4px 0 4px 18px; font-size: 18px; color: var(--navy); max-width: 720px; }
+
+    /* steps */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; counter-reset: s; }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+    .steps div { counter-increment: s; }
+    .steps div::before { content: counter(s); display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 600; margin-bottom: 14px; }
+    .steps h3 { font-size: 19px; }
+    .steps p { font-size: 15px; color: var(--text-mid); }
+    .guarantee { margin-top: 40px; background: var(--off-white); border-radius: 12px; padding: 22px 26px; font-size: 17px; color: var(--navy); }
+
+    /* about */
+    .about { background: var(--off-white); }
+    .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } .about-grid img { max-width: 240px; } }
+    .about-grid img { border-radius: 12px; width: 100%; height: auto; object-fit: cover; }
+    .ventures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 4px 0 20px; }
+    @media (max-width: 760px) { .ventures { grid-template-columns: 1fr; } }
+    .ventures a { display: block; text-decoration: none; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; transition: border-color .2s; }
+    .ventures a:hover { border-color: var(--blue); }
+    .ventures b { display: block; color: var(--navy); font-size: 16px; }
+    .ventures span { font-size: 14px; color: var(--text-mid); line-height: 1.45; }
+    .trust { margin-top: 26px; font-size: 14px; color: var(--text-light); }
+    .trust b { color: var(--navy); font-weight: 600; letter-spacing: .02em; }
+    .about p { color: var(--text-mid); margin-bottom: 14px; font-size: 17px; }
+    .wins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 6px 0 20px; }
+    @media (max-width: 760px) { .wins { grid-template-columns: 1fr; } }
+    .wins div { background: var(--white); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); }
+    .wins b { display: block; font-family: var(--serif); font-weight: 400; font-size: 30px; color: var(--green-dark); line-height: 1.1; }
+    .wins span { font-size: 14px; color: var(--text-mid); }
+    .quote { max-width: 760px; margin: 0 auto; text-align: center; }
+    .quote p { font-family: var(--serif); font-size: clamp(22px, 3vw, 28px); color: var(--navy); line-height: 1.35; margin-bottom: 16px; }
+    .quote cite { font-style: normal; font-size: 15px; color: var(--text-light); }
+
+    /* faq */
+    details { border-bottom: 1px solid var(--border); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 600; color: var(--navy); font-size: 17px; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; float: right; color: var(--blue); font-size: 20px; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { margin-top: 10px; color: var(--text-mid); }
+    .faq { max-width: 760px; margin: 32px auto 0; }
+
+    /* final */
+    .final { background: var(--navy); text-align: center; }
+    .final h2 { color: var(--white); }
+    .final .lead { color: #B8C4D1; margin: 0 auto 30px; }
+
+    footer { background: #16222F; color: #8597AA; font-size: 14px; padding: 36px 0; }
+    footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    footer a { color: #B8C4D1; text-decoration: none; margin-right: 18px; }
+    footer a:hover { color: var(--white); }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="main-nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Readable<span>Labs</span></a>
-      <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Schedule a Review</a>
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Readable<span>Labs</span></a>
+    <div class="nav-links">
+      <a href="#who">Who we help</a>
+      <a href="#steps">How we help</a>
+      <a href="#how">How it works</a>
+      <a href="#check" class="btn">Free growth check</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-content fade-up">
-        <div class="hero-eyebrow">
-          <span class="hero-eyebrow-dot"></span>
-          <span class="hero-eyebrow-text">AI Content Clarity Audits &middot; E-commerce</span>
-        </div>
-        <h1>AI Is Already Describing<br>Your Products.<br><em>Is It Getting Them Right?</em></h1>
-        <p class="hero-sub">
-          Most e-commerce brands are being misrepresented by ChatGPT, Claude, and Gemini. And they don't even know it. I help brands find where AI gets their products wrong, and give them specific fixes they can act on.
-        </p>
-        <div class="hero-cta-group">
-          <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Schedule a Review</a>
-        </div>
-        <p class="hero-note">20-minute call &middot; No pitch &middot; Just clarity</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <span class="label">Growth for small businesses &amp; makers</span>
+    <h1>More customers for your business, whatever stage you're at.</h1>
+    <p class="lead">Just getting set up or ready to scale, we bring you new leads through Instagram, Facebook, Google and WhatsApp, and make sure they turn into customers who call, book and buy.</p>
+
+    <form class="check" id="check" name="growth-check" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="growth-check" />
+      <p class="hidden"><label>Leave this empty <input name="bot-field" /></label></p>
+      <label class="check-title" for="biz">Start with a free growth check</label>
+      <p class="check-sub">Share your website or Instagram. Within 24 hours you'll get the 3 things costing you the most customers, and how to fix each one.</p>
+      <div class="check-row">
+        <input id="biz" name="business" type="text" required placeholder="yourbusiness.com or @yourinstagram" />
+        <input name="email" type="email" required aria-label="Your email" placeholder="Your email" />
+        <button type="submit" class="btn">Get my free check</button>
       </div>
-    </div>
-  </section>
+      <p class="check-note">No call needed. A real person looks at your business, not a bot.</p>
+    </form>
 
-  <!-- PROBLEM -->
-  <section id="problem" class="section-pad">
-    <div class="container">
-      <div class="problem-grid">
-        <div class="problem-left fade-up">
-          <span class="label">The Problem</span>
-          <h2>Your Content Is Clear to Humans. But AI Reads It Differently.</h2>
-          <p>When customers research products through ChatGPT, Claude, or Gemini, AI interprets your product descriptions, specifications, and marketing copy.</p>
-          <p>If your content is vague, contradictory, or assumes context, AI fills in the gaps with assumptions. <strong>Often wrong ones.</strong></p>
-          <div class="problem-tag">This isn't about visibility. It's about clarity.</div>
-        </div>
+    <p class="alt-cta">Rather talk it through? <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call">Book a 20-min call</a></p>
+    <p class="trust">8 years helping businesses sell on <b>Shopify · Etsy · Amazon · Walmart</b></p>
+  </div>
+</header>
 
-        <div class="problem-issues fade-up">
-          <span class="problem-issues-label">What goes wrong</span>
-
-          <div class="issue-item">
-            <div class="issue-icon">📉</div>
-            <div class="issue-text">
-              <strong>Generic positioning</strong>
-              <span>You sound identical to cheaper competitors</span>
-            </div>
-          </div>
-
-          <div class="issue-item">
-            <div class="issue-icon">⚠️</div>
-            <div class="issue-text">
-              <strong>Hallucinated features</strong>
-              <span>Claims you never made, attributed to your product</span>
-            </div>
-          </div>
-
-          <div class="issue-item">
-            <div class="issue-icon">🔀</div>
-            <div class="issue-text">
-              <strong>Contradictory specifications</strong>
-              <span>Description vs. specs don't align for AI</span>
-            </div>
-          </div>
-
-          <div class="issue-item">
-            <div class="issue-icon">💸</div>
-            <div class="issue-text">
-              <strong>Lost differentiation</strong>
-              <span>Your premium value doesn't translate to AI output</span>
-            </div>
-          </div>
-        </div>
+<!-- WHO -->
+<section id="who">
+  <div class="container">
+    <span class="label">Who we help</span>
+    <h2>Growing businesses that are too busy to do it all themselves.</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Shops &amp; makers</h3>
+        <p>Get found by new customers and sell online, not just at markets, pop-ups or your store.</p>
+        <p class="eg">Candles, skincare, jewelry, boutiques, bakers, caterers</p>
+      </div>
+      <div class="card">
+        <h3>Service businesses</h3>
+        <p>Fill your calendar: more bookings, more reviews, and every inquiry answered fast.</p>
+        <p class="eg">Clinics, salons, tutors, studios, restaurants</p>
+      </div>
+      <div class="card">
+        <h3>Real estate agents</h3>
+        <p>Stay top of mind with posts that bring in new leads, and follow up with every past client and open-house visitor.</p>
+        <p class="eg">New and established agents</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SOLUTION -->
-  <section id="solution" class="section-pad">
-    <div class="container">
-      <div class="solution-header fade-up">
-        <span class="label">The Service</span>
-        <h2>AI Content Clarity Audits for E&#8209;commerce Brands</h2>
-        <p>I run your products through multiple AI systems, find exactly where and how AI gets them wrong, and give you specific fixes to sort it out.</p>
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <span class="label">What a growth check finds</span>
+    <h2>Small things that quietly cost you customers.</h2>
+    <p class="lead">People search, scroll and message, then pick whoever shows up, looks trustworthy and replies first. We make sure that's you.</p>
+    <div class="found">
+      <div><b>A signup form that saved nothing</b><p>A handmade-goods shop's newsletter form wasn't keeping a single email, right before their biggest market of the year.</p></div>
+      <div><b>A sale that ended months ago</b><p>A wellness brand's homepage was still advertising a Mother's Day discount going into the holidays.</p></div>
+      <div><b>Two names, zero trust</b><p>A skincare brand's website and Instagram used different names, so new customers couldn't tell they were the same business.</p></div>
+    </div>
+    <p class="source">Real examples from small businesses we looked at this month. A free growth check finds things like these.</p>
+  </div>
+</section>
+
+<!-- STAGES -->
+<section class="stages" id="steps">
+  <div class="container center">
+    <span class="label">Wherever you are, there's a next step</span>
+    <h2>Start where your business is today.</h2>
+    <p class="lead">Every step is tied to one number we grow together.</p>
+  </div>
+  <div class="container">
+    <div class="grid-3">
+      <div class="card stage">
+        <span class="step">Step 1 · Get found</span>
+        <h3>Show up when customers search for what you sell</h3>
+        <p>For businesses that are hard to find online.</p>
+        <ul>
+          <li>Google profile set up and fixed</li>
+          <li>Instagram &amp; Facebook set up, plus 2 weeks of posts</li>
+          <li>Simple website or online shop</li>
+          <li>An easy way to get more reviews</li>
+          <li>A check of what ChatGPT and Google's AI say about you</li>
+        </ul>
+        <p class="measure"><b>We track:</b> calls, direction requests, messages and orders</p>
       </div>
-
-      <div class="solution-cards">
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">🔍</div>
-          <h3>Comprehensive Analysis</h3>
-          <p>10&ndash;15 key products analyzed across multiple AI systems with systematic evaluation.</p>
-        </div>
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">↔️</div>
-          <h3>Side-by-Side Comparison</h3>
-          <p>AI interpretations compared directly against your intended messaging and specs.</p>
-        </div>
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">✅</div>
-          <h3>Specific Fixes</h3>
-          <p>Clear recommendations with before/after examples you can implement immediately.</p>
-        </div>
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">📋</div>
-          <h3>Root Cause Identification</h3>
-          <p>Not just what's wrong. I dig into why AI misreads your content and pinpoint exactly where it breaks down.</p>
-        </div>
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">📞</div>
-          <h3>Walkthrough Call</h3>
-          <p>30-minute call to walk through findings, answer questions, and discuss priorities.</p>
-        </div>
-        <div class="sol-card fade-up">
-          <div class="sol-card-icon">📄</div>
-          <h3>Implementation Guide</h3>
-          <p>Detailed report + prioritized action plan so nothing gets lost in a spreadsheet.</p>
-        </div>
+      <div class="card stage featured">
+        <span class="step">Step 2 · Win more customers</span>
+        <h3>Bring in new leads, and convert them</h3>
+        <p>For growing businesses that want a steady flow of customers.</p>
+        <ul>
+          <li>New lead sources: social, Google, referrals, outreach</li>
+          <li>Find where customers drop off</li>
+          <li>Every inquiry answered fast, automatically</li>
+          <li>Follow-ups to past customers and old leads</li>
+          <li>One working AI system, built and running in 2 weeks</li>
+        </ul>
+        <p class="measure"><b>We track:</b> new leads, response time, bookings and repeat customers</p>
       </div>
-
-      <div class="solution-meta fade-up">
-        <div class="meta-item">
-          <span class="meta-label">Timeline</span>
-          <span class="meta-value">5&ndash;7 business days</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Delivery</span>
-          <span class="meta-value">Detailed report + implementation guide</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Systems tested</span>
-          <span class="meta-value">ChatGPT, Claude, Gemini</span>
-        </div>
+      <div class="card stage">
+        <span class="step">Step 3 · Grow every month</span>
+        <h3>Your growth engine, run for you</h3>
+        <p>For established businesses ready to grow steadily.</p>
+        <ul>
+          <li>Social media, Google, WhatsApp and email run for you</li>
+          <li>AI systems that bring in new customers every month</li>
+          <li>Monthly plan and a weekly report on your number</li>
+          <li>Month to month, no lock-in</li>
+        </ul>
+        <p class="measure"><b>We track:</b> new customers and revenue per month</p>
       </div>
     </div>
-  </section>
+    <p class="center" style="margin-top:28px;color:var(--text-mid)">Just want your social media handled? We do that too. <a href="#check" style="color:var(--blue);font-weight:600">Start with a free growth check</a> and we'll recommend the right package.</p>
+  </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="section-pad">
-    <div class="container">
-      <div class="how-header fade-up">
-        <span class="label">Process</span>
-        <h2>How the Audit Works</h2>
-      </div>
-
-      <div class="steps">
-        <div class="step fade-up">
-          <div class="step-num">01</div>
-          <h3>Product Selection</h3>
-          <p>You share your website URL. I select 10&ndash;15 representative products across your catalog.</p>
-        </div>
-        <div class="step fade-up">
-          <div class="step-num">02</div>
-          <h3>Multi-System Testing</h3>
-          <p>I test each product through ChatGPT, Claude, and Gemini using a systematic evaluation framework.</p>
-        </div>
-        <div class="step fade-up">
-          <div class="step-num">03</div>
-          <h3>Gap Analysis</h3>
-          <p>I map out where AI misunderstands, contradicts, or over-generalizes your products, and document what's causing each issue.</p>
-        </div>
-        <div class="step fade-up">
-          <div class="step-num">04</div>
-          <h3>Recommendations</h3>
-          <p>You receive a comprehensive report with specific fixes, before/after examples, and implementation priorities.</p>
-        </div>
-      </div>
-
-      <div class="how-note fade-up">
-        <p>This isn't "AI SEO" or visibility optimization. It's content clarity analysis: figuring out why AI can't accurately represent what you actually sell, so you can fix it at the source.</p>
-      </div>
+<!-- WHAT WE HANDLE -->
+<section>
+  <div class="container">
+    <span class="label">What we handle</span>
+    <h2>Social media is one piece. We connect all of them.</h2>
+    <p class="lead">Posting alone doesn't pay the bills. We make sure each channel leads somewhere: a call, a booking, an order.</p>
+    <div class="channels">
+      <span class="chip">Instagram</span><span class="chip">Facebook</span><span class="chip">Google profile &amp; Maps</span><span class="chip">Reviews</span><span class="chip">Website &amp; online shop</span><span class="chip">WhatsApp</span><span class="chip">Email &amp; follow-ups</span><span class="chip">ChatGPT &amp; AI search</span>
     </div>
-  </section>
+    <p class="callout"><b>Social media that brings in customers, not just likes.</b> We report messages, calls, bookings and sales, not views.</p>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section-pad">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-sidebar fade-up">
-          <div class="about-photo">
-            <img src="yugashree.jpg" alt="Yugashree Kotkar, Founder of Readable Labs" width="600" height="828" loading="lazy" />
-          </div>
-          <div class="about-name">Yugashree</div>
-          <div class="about-title">Founder, Readable Labs &middot; Seattle, WA</div>
-          <a href="https://www.linkedin.com/in/yugashree-kotkar/" target="_blank" rel="noopener" class="about-linkedin">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-        </div>
-
-        <div class="about-body fade-up">
-          <span class="label">About</span>
-          <h2>Enterprise Scale. DTC Speed.</h2>
-
-          <p>Your product descriptions make perfect sense to customers. But when someone asks ChatGPT "What's the best [your category]," AI might describe your $200 product identically to a $40 generic.</p>
-
-          <p>I've managed product content at both ends: <strong>Walmart</strong> (100M+ users, massive catalog complexity) and <strong>DTC brands</strong> (small teams, launch speed). Whether it's thousands of SKUs or your first 10 products, I've been there.</p>
-
-          <p>8 years optimizing for conversion across Shopify, Amazon, and retail channels. Coordinating launches. Making content work at every touchpoint.</p>
-
-          <div class="about-highlight">
-            <p>That work revealed something most brands miss: content that converts humans is often structurally unclear to AI. "Premium quality" needs context AI doesn't have. "Professional-grade" could mean anything. Contradictory specs confuse it.</p>
-          </div>
-
-          <p>So AI describes you generically or recommends competitors instead.</p>
-
-          <p><strong>Readable Labs</strong> helps e-commerce brands identify these gaps before they cost customers. I audit how ChatGPT, Claude, and Gemini interpret your products, show exactly where clarity breaks down, and give you specific fixes you can implement this week.</p>
-
-          <p>Based in Seattle, working with brands from launch to $50M+ who want their content to work for both humans and AI.</p>
-        </div>
-      </div>
+<!-- HOW -->
+<section id="how" style="padding-top:0">
+  <div class="container">
+    <span class="label">How it works</span>
+    <h2>Simple, and you're never guessing.</h2>
+    <div class="steps">
+      <div><h3>Free growth check</h3><p>Share your website or Instagram. Within 24 hours you get the 3 fixes that matter most. Use them either way.</p></div>
+      <div><h3>Pick one number</h3><p>Calls, bookings, orders or new customers. That's how we'll both judge the work.</p></div>
+      <div><h3>We build and run it</h3><p>You approve, we do the work. AI handles the heavy lifting, so it's fast and affordable.</p></div>
+      <div><h3>Weekly report</h3><p>One short update on your number, so you always know what's working.</p></div>
     </div>
-  </section>
+    <p class="guarantee"><b>Our promise:</b> if your system isn't live within 2 weeks, it's free.</p>
+  </div>
+</section>
 
-  <!-- WHO IT'S FOR -->
-  <section id="fit" class="section-pad">
-    <div class="container">
-      <div class="fit-header fade-up">
-        <span class="label">Who It's For</span>
-        <h2>This Is For You If:</h2>
+<!-- ABOUT -->
+<section class="about">
+  <div class="container about-grid">
+    <img src="yugashree-2026.jpg" alt="Yugashree Kotkar, founder of Readable Labs" width="800" height="1034" loading="lazy" />
+    <div>
+      <span class="label">Who you'll work with</span>
+      <h2>Hi, I'm Yugashree.</h2>
+      <p>For 8 years I've helped businesses sell more, from small shops to some of the biggest retailers, across Shopify, Etsy, Amazon and Walmart.</p>
+      <p>I don't just advise. I build businesses too. I'm the founder behind three ventures:</p>
+      <div class="ventures">
+        <a href="https://kaaizan.com"><b>Kaaizan</b><span>An AI agent that runs your day</span></a>
+        <a href="https://joypage.app"><b>JoyPage</b><span>Personalised interactive cards for every occasion</span></a>
+        <a href="https://aimantrastudio.com"><b>AI Mantra Studio</b><span>AI workshops for teens. First paying clients in under 2 weeks</span></a>
       </div>
-
-      <div class="fit-grid">
-        <div class="fit-card fade-up">
-          <div class="fit-card-header">
-            <div class="fit-badge good">✓</div>
-            <div class="fit-card-title">Good Fit</div>
-          </div>
-          <ul class="fit-list yes">
-            <li><span class="check">✓</span><span>E-commerce brand with 10+ SKUs</span></li>
-            <li><span class="check">✓</span><span>Sell physical products (supplements, beauty, baby, home, etc.)</span></li>
-            <li><span class="check">✓</span><span>Concerned about how AI represents your brand</span></li>
-            <li><span class="check">✓</span><span>Customers seem confused about your differentiation</span></li>
-            <li><span class="check">✓</span><span>Want to understand the problem before investing in solutions</span></li>
-          </ul>
-        </div>
-
-        <div class="fit-card fade-up">
-          <div class="fit-card-header">
-            <div class="fit-badge bad">✕</div>
-            <div class="fit-card-title">Not the Right Fit</div>
-          </div>
-          <ul class="fit-list no">
-            <li><span class="check">✕</span><span>Service businesses (no products to audit)</span></li>
-            <li><span class="check">✕</span><span>Brands with fewer than 10 SKUs</span></li>
-            <li><span class="check">✕</span><span>Companies looking for "AI SEO" quick fixes</span></li>
-          </ul>
-        </div>
-      </div>
+      <p>I use AI to do in days what used to take a whole marketing team weeks. So you get big-brand marketing, at a small-business price.</p>
+      <p>You'll work with me directly. No hand-offs, no account managers.</p>
+      <a href="#check" class="btn" style="margin-top:8px">Get your free growth check</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FINAL CTA -->
-  <section id="cta-final" class="section-pad">
-    <div class="container">
-      <div class="cta-inner fade-up">
-        <span class="label" style="color:rgba(255,255,255,0.45);">Let's Talk</span>
-        <h2>Want to Know How AI Describes Your Products?</h2>
-        <p class="cta-body">Schedule a 20-minute content review to see if this applies to your catalog.</p>
-        <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Schedule a Review</a>
-        <p class="cta-note">No pitch. Just a conversation about what's happening with your content.</p>
-      </div>
+<!-- TESTIMONIAL: hidden until a REAL quote with permission exists. Replace the text, then remove style="display:none". Never publish an invented quote. -->
+<section style="display:none">
+  <div class="container quote">
+    <span class="label">What clients say</span>
+    <p>"REAL QUOTE HERE"</p>
+    <cite>Name, Role, Company</cite>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container center">
+    <span class="label">Questions</span>
+    <h2>Good to know</h2>
+  </div>
+  <div class="container faq">
+    <details><summary>Do I need to understand AI or tech?</summary><p>No. We handle it. You approve the work and see the results in one weekly number.</p></details>
+    <details><summary>How much does it cost?</summary><p>It depends on your stage and goals. After your free growth check, we send you a clear package with a fixed price. No surprises.</p></details>
+    <details><summary>Am I locked into a contract?</summary><p>No. One-time packages are one-time. Monthly work is month to month.</p></details>
+    <details><summary>Where are you based? Do you work remotely?</summary><p>We're based in Redmond, WA, and work with businesses anywhere. If you're nearby, we're happy to meet in person.</p></details>
+    <details><summary>What do I get from the free growth check?</summary><p>Within 24 hours, a short personal email with the 3 things costing you the most customers (on Google, your website, Instagram, reviews or what AI says about you) and how to fix each one. Use them yourself or have us do it. No call, no obligation.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container">
+    <h2>Let's find your next customers.</h2>
+    <p class="lead">Free, no call needed. Within 24 hours you'll have 3 things to fix this week.</p>
+    <a href="#check" class="btn">Get my free growth check</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Readable Labs · Redmond, WA</div>
+    <div>
+      <a href="mailto:yugashree107@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/yugashree-kotkar/">LinkedIn</a>
+      <a href="/ecommerce/">For e-commerce brands</a>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <a href="#" class="footer-logo">Readable<span>Labs</span></a>
-          <div class="footer-tagline">AI Content Clarity Audits for E-commerce</div>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:yugashree107@gmail.com" class="footer-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-            yugashree107@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/yugashree-kotkar/" target="_blank" rel="noopener" class="footer-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://calendly.com/yugashree107/ai-content-clarity-discovery-call" target="_blank" rel="noopener" class="footer-cta-btn">
-            Schedule a Review &rarr;
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">&copy; 2025 Readable Labs. All Rights Reserved. Seattle, WA</span>
-        <span class="footer-copy">readablelabs.io</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      'use strict';
-
-      // Scroll-triggered fade-up
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-      // Stagger cards within grids
-      document.querySelectorAll('.solution-cards, .steps, .fit-grid').forEach((parent) => {
-        parent.querySelectorAll('.fade-up').forEach((child, i) => {
-          child.style.transitionDelay = (i * 80) + 'ms';
-        });
-      });
-
-      // Sticky nav shadow
-      const nav = document.getElementById('main-nav');
-      window.addEventListener('scroll', () => {
-        nav.style.boxShadow = window.scrollY > 20
-          ? '0 2px 20px rgba(30,45,61,0.10)'
-          : '';
-      }, { passive: true });
-    })();
-  </script>
+  </div>
+</footer>
 
 </body>
 </html>

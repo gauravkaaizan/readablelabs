@@ -43,11 +43,12 @@ Website text should sound like a real person wrote it, not an AI. Avoid patterns
 
 ## Technical Conventions
 
-- All HTML, CSS, and JS live in a single `index.html` file — no separate files
+- Each page is a single self-contained HTML file (inline CSS/JS): `index.html` (home), `ecommerce/index.html` (original e-commerce audit page), `thanks/index.html` (form thank-you, noindex)
 - No external JS libraries; use vanilla JS only
 - Google Fonts is the only external dependency allowed
 - Use `&#8209;` (non-breaking hyphen) in "E-commerce" headings to prevent mid-word line breaks
-- All CTA buttons link to: `https://calendly.com/yugashree107/ai-content-clarity-discovery-call`
+- Primary CTA: the free growth check form (`#check`, Netlify Forms, name `growth-check`). Secondary CTA (book a call): `https://calendly.com/yugashree107/ai-content-clarity-discovery-call`
+- SEO files: `sitemap.xml`, `robots.txt`, `og-image.png`, LocalBusiness/ProfessionalService JSON-LD in the home page head, Google Search Console verification meta tag (do not remove)
 - LinkedIn link: `https://www.linkedin.com/in/yugashree-kotkar/`
 - Domain: `readablelabs.io`
 
@@ -57,10 +58,10 @@ Website text should sound like a real person wrote it, not an AI. Avoid patterns
 
 - Company: Readable Labs
 - Founder: Yugashree Kotkar
-- Location: Seattle, WA
-- Service: AI Content Clarity Audits for e-commerce brands
+- Location: Redmond, WA
+- Service (since 2026-10-27): growth for small businesses and makers (Google, Instagram, Facebook, WhatsApp, website, reviews). Entry offer: free growth check (3 fixes in 24 hours). The original AI Content Clarity Audit lives at /ecommerce/
 - AI systems referenced: ChatGPT, Claude, Gemini (not Perplexity)
-- SKU threshold: 10+ SKUs for good fit, fewer than 10 is not a fit
+- SKU threshold (e-commerce audit page only): 10+ SKUs
 
 ## Colors
 
@@ -72,3 +73,15 @@ Website text should sound like a real person wrote it, not an AI. Avoid patterns
 | Background | `#F7F6F2` |
 | Text | `#4A5568` |
 | White | `#FFFFFF` |
+
+---
+
+## Deploying
+
+Netlify site `readablelabs` (id `a863ca50-c19b-478f-bb4e-d24cfc0eb0b3`) on the Kaaizan Netlify account. Form detection is ON; new form submissions email yugashree107@gmail.com.
+
+```bash
+netlify deploy --site a863ca50-c19b-478f-bb4e-d24cfc0eb0b3 --dir . --prod
+```
+
+Never deploy without showing Yugashree a preview and getting an explicit go.

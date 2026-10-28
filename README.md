@@ -1,10 +1,10 @@
 # Readable Labs — Marketing Website
 
-Single-page marketing website for **Readable Labs**, an AI Content Clarity Auditing service for e-commerce brands.
+Marketing website for **Readable Labs**: growth for small businesses and makers, starting with a free growth check. The original e-commerce AI Content Clarity Audit page is at `/ecommerce/`.
 
-**Live site:** https://readablelabs.netlify.app
+**Live site:** https://readablelabs.io
 **Domain:** readablelabs.io
-**Location:** Seattle, WA
+**Location:** Redmond, WA
 **Calendly:** https://calendly.com/yugashree107/ai-content-clarity-discovery-call
 **LinkedIn:** https://www.linkedin.com/in/yugashree-kotkar/
 
@@ -14,10 +14,14 @@ Single-page marketing website for **Readable Labs**, an AI Content Clarity Audit
 
 ```
 readablelabs/
-├── index.html       # Single file — all HTML, CSS, and JS inline
-├── yugashree.jpg    # Founder headshot (About section)
-├── README.md        # This file
-└── CLAUDE.md        # AI assistant rules for this project
+├── index.html            # Home: free growth check, offers, about, FAQ
+├── ecommerce/index.html  # Original AI Content Clarity Audit page
+├── thanks/index.html     # Form thank-you page (noindex)
+├── sitemap.xml · robots.txt · og-image.png
+├── yugashree-2026.jpg    # Headshot (home page)
+├── yugashree.jpg         # Headshot (ecommerce page)
+├── README.md             # This file
+└── CLAUDE.md             # AI assistant rules for this project
 ```
 
 ---
